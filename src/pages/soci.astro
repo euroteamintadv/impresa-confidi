@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout
+  title="Area Soci"
+  description="Area riservata ai soci di Impresa Confidi: comunicazioni, convocazioni assembleari e documenti dedicati."
+  lang="it"
+  currentPath="/soci"
+>
+  <PageHeader title="Area Soci" subtitle="Informazioni e comunicazioni per i soci" />
+
+  <!-- Ultima assemblea -->
+  <section class="section">
+    <div class="container-custom max-w-2xl mx-auto">
+      <div class="card border border-accent/20 bg-accent-light/10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">📅</span>
+          <h2 class="text-xl text-accent">Assemblea dei Soci</h2>
+        </div>
+        <p class="text-text-light mb-2">I Signori Soci sono convocati in Assemblea Ordinaria presso la sede legale in Via Cappuccini 64, Torre del Greco (NA).</p>
+        <p class="text-text-light mb-4">Per informazioni su data e modalità di partecipazione, contattare la segreteria o consultare le comunicazioni via email.</p>
+        <a href="/docs/soci/assemblea-soci-9-ott-2023.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline text-sm px-4 py-2 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Documento assemblea
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prossimi eventi / news soci -->
+  <section class="section bg-bg-alt">
+    <div class="container-custom">
+      <h2 class="section-title mb-12">Comunicazioni</h2>
+      <div class="max-w-2xl mx-auto space-y-6">
+        <div class="card">
+          <span class="text-xs text-text-light bg-bg-alt px-3 py-1 rounded-full">09/10/2023</span>
+          <h3 class="mt-3 mb-2">Convocazione Assemblea Ordinaria</h3>
+          <p class="text-text-light text-sm">Convocazione in prima e seconda convocazione presso la sede di Torre del Greco. I dettagli sono stati inviati via email a tutti i soci.</p>
+        </div>
+        <div class="card">
+          <span class="text-xs text-text-light bg-bg-alt px-3 py-1 rounded-full">27/05/2022</span>
+          <h3 class="mt-3 mb-2">Assemblea — Seconda convocazione</h3>
+          <p class="text-text-light text-sm">Partecipazione mediante collegamento telematico previa prenotazione via email entro le ore 12 del secondo giorno precedente la prima convocazione.</p>
+          <a href="/docs/soci/assemblea_soci_2022.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-accent hover:text-accent-dark text-sm mt-2">
+            Scarica allegato
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti segreteria -->
+  <section class="section">
+    <div class="container-custom max-w-lg mx-auto text-center">
+      <h2 class="text-primary mb-4">Contatta la segreteria</h2>
+      <p class="text-text-light mb-6">Per informazioni sulle assemblee, sulle modalità di partecipazione o per qualsiasi richiesta relativa alla vita sociale.</p>
+      <a href="mailto:impresaconfidi@gmail.com" class="btn btn-primary">Scrivi alla segreteria</a>
+    </div>
+  </section>
+</BaseLayout>

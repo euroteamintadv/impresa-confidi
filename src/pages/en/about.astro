@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const en = await import('../../i18n/en.json');
+const t = en.default;
+---
+
+<BaseLayout
+  title="About Us"
+  description="Impresa Confidi SCpA is a non-profit cooperative joint-stock company, active since 1998. Manager of public guarantee funds for SMEs in Campania."
+  lang="en"
+  currentPath="/en/about"
+>
+  <PageHeader title="About Us" subtitle="A history of trust and territory" />
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose-lg">
+          <p class="lead text-xl text-text-light leading-relaxed">
+            Impresa Confidi is a <strong class="text-text">non-profit cooperative joint-stock company</strong>, active since 1998. It manages public guarantee funds dedicated to Small and Medium Enterprises operating in the Campania region of Italy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bg-alt">
+    <div class="container-custom">
+      <h2 class="section-title mb-12">Our history</h2>
+      <div class="max-w-2xl mx-auto space-y-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">98</div>
+          <div>
+            <h3 class="text-xl">Foundation</h3>
+            <p class="text-text-light">Impresa Confidi was founded as a guarantee cooperative to support Campanian businesses in accessing credit.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">05</div>
+          <div>
+            <h3 class="text-xl">Growth</h3>
+            <p class="text-text-light">Expansion of the membership base and guarantee volumes. New banking partnerships established.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">15</div>
+          <div>
+            <h3 class="text-xl">Consolidation</h3>
+            <p class="text-text-light">Strengthened presence across Campania. Management of public funds and new partnerships.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">21</div>
+          <div>
+            <h3 class="text-xl">Invitalia Accreditation</h3>
+            <p class="text-text-light">Accredited as an entity for Resto al Sud applications, expanding services for Southern Italian businesses.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-lg">25</div>
+          <div>
+            <h3 class="text-xl">Today</h3>
+            <p class="text-text-light">Over 800 assisted companies, steadily growing guarantee volumes. Looking ahead with new digital services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-primary mb-6">Our purpose</h2>
+        <p class="text-text-light text-lg leading-relaxed">
+          Our primary purpose is the <strong class="text-text">provision of collective guarantees</strong> to member SMEs, facilitating access to bank credit on favorable terms. We operate on a non-profit basis, reinvesting all resources for the benefit of our members and the local area.
+        </p>
+        <div class="mt-10 text-center">
+          <a href="/en/contact" class="btn btn-primary">{t.cta.contatti}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,127 @@
+---
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  currentPath: string;
+  navItems: Link[];
+  site: {
+    title: string;
+  };
+  nav: {
+    privacy: string;
+    cookie: string;
+  };
+}
+
+const { currentPath, navItems, site, nav } = Astro.props;
+
+const isEn = currentPath.startsWith('/en');
+
+function isActive(href: string) {
+  if (href === '/' || href === '/en') return currentPath === href;
+  return currentPath.startsWith(href);
+}
+---
+
+<!-- Skip link -->
+<a href="#main-content" class="skip-link">Salta al contenuto</a>
+
+<!-- Top bar -->
+<div class="hidden md:block bg-primary text-white text-sm py-2">
+  <div class="container-custom flex justify-between items-center">
+    <div class="flex items-center gap-6">
+      <a href="mailto:impresaconfidi@gmail.com" class="hover:opacity-80 transition-opacity flex items-center gap-1.5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        impresaconfidi@gmail.com
+      </a>
+      <a href="tel:+390813580367" class="hover:opacity-80 transition-opacity flex items-center gap-1.5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +39 081 358 0367
+      </a>
+    </div>
+    <div>
+      <a href={isEn ? '/' : '/en'} class="text-white/80 hover:text-white transition-colors text-xs font-medium uppercase tracking-wider">
+        {isEn ? 'IT' : 'EN'}
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navbar -->
+<header class="sticky top-0 z-40 navbar-blur" role="banner">
+  <div class="container-custom">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href={isEn ? '/en' : '/'} class="flex items-center gap-3 group" aria-label={site.title}>
+        <img src="/images/logo.svg" alt="Impresa Confidi" class="h-10 md:h-12 w-auto" width="48" height="48" />
+        <span class="font-serif font-bold text-lg md:text-xl text-text group-hover:text-primary transition-colors leading-tight">
+          Impresa<br class="md:hidden" /><span class="hidden sm:inline"> </span>Confidi
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1" role="navigation" aria-label="Navigazione principale">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              isActive(item.href)
+                ? 'text-primary bg-primary-light'
+                : 'text-text-light hover:text-primary hover:bg-bg-alt'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 rounded-lg text-text hover:bg-bg-alt transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Apri menu"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-border-light mt-2 pt-4" role="navigation" aria-label="Menu mobile">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class={`block px-4 py-2.5 rounded-lg font-medium transition-colors text-base ${
+            isActive(item.href)
+              ? 'text-primary bg-primary-light'
+              : 'text-text-light hover:text-primary hover:bg-bg-alt'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+      <div class="mt-3 px-4 pt-3 border-t border-border-light flex items-center gap-2">
+        <span class="text-xs text-text-light">Language:</span>
+        <a href={isEn ? '/' : '/en'} class="lang-switch font-semibold">{isEn ? 'IT' : 'EN'}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

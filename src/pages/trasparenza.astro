@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const trasparenzaDocs = [
+  { name: "Documento di sintesi ImpresaConfidi", file: "documento_di_sintesi_impresaconfidi.pdf" },
+  { name: "Foglio informativo garanzia collettiva dei fidi", file: "foglio_informativo_garanzia_collettiva_dei_fidi.pdf" },
+  { name: "Principali definizioni 2017", file: "principali_definizioni_2017.pdf" },
+];
+---
+
+<BaseLayout
+  title="Trasparenza"
+  description="Documenti di trasparenza di Impresa Confidi SCpA: fogli informativi, documento di sintesi, definizioni e condizioni contrattuali."
+  lang="it"
+  currentPath="/trasparenza"
+>
+  <PageHeader
+    title="Trasparenza"
+    subtitle="Documenti informativi e condizioni contrattuali"
+  />
+
+  <!-- Sezione obbligatoria -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose max-w-none mb-12">
+          <p class="text-text-light text-lg leading-relaxed">
+            In conformità con la normativa di settore, Impresa Confidi mette a disposizione del pubblico la documentazione relativa alla trasparenza delle operazioni e dei servizi offerti. Di seguito i documenti disponibili per la consultazione e il download.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          {trasparenzaDocs.map(doc => (
+            <a
+              href={`/docs/trasparenza/${doc.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-lg hover:bg-primary-light/50 transition-colors group border border-transparent hover:border-border-light"
+            >
+              <span class="icon-pdf group-hover:bg-accent group-hover:text-white transition-colors">PDF</span>
+              <span class="text-text group-hover:text-primary transition-colors">{doc.name}</span>
+              <svg class="w-4 h-4 ml-auto text-text-light opacity-0 group-hover:opacity-100 transition-all flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informativa aggiuntiva -->
+  <section class="section bg-bg-alt">
+    <div class="container-custom max-w-3xl mx-auto">
+      <h2 class="text-primary mb-8">Altre informazioni</h2>
+
+      <div class="space-y-8">
+        <div class="card">
+          <h3 class="mb-3">Reclami</h3>
+          <p class="text-text-light">
+            Per eventuali reclami, è possibile inviare una comunicazione scritta all'indirizzo PEC <strong>impresaconfidi@pec.it</strong> o tramite raccomandata A/R presso la sede legale in Via Cappuccini 64, 80059 Torre del Greco (NA).
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-3">Informativa precontrattuale</h3>
+          <p class="text-text-light">
+            Prima della sottoscrizione di qualsiasi contratto di garanzia, mettiamo a disposizione del socio tutta la documentazione precontrattuale prevista dalla normativa vigente, inclusi i fogli informativi aggiornati.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-3">Tassi e condizioni</h3>
+          <p class="text-text-light">
+            Le condizioni economiche applicate sono consultabili nei fogli informativi sopra riportati. Per condizioni personalizzate, invitiamo i soci a contattarci direttamente.
+          </p>
+          <div class="mt-4">
+            <a href="/contatti" class="btn btn-outline text-sm px-4 py-2">Contattaci</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

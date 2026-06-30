@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const trasparenzaDocs = [
+  { name: "Summary document — ImpresaConfidi", file: "documento_di_sintesi_impresaconfidi.pdf" },
+  { name: "Collective guarantee information sheet", file: "foglio_informativo_garanzia_collettiva_dei_fidi.pdf" },
+  { name: "Key definitions 2017", file: "principali_definizioni_2017.pdf" },
+];
+---
+
+<BaseLayout
+  title="Transparency"
+  description="Transparency documents of Impresa Confidi SCpA: information sheets, summary document, definitions and contractual conditions."
+  lang="en"
+  currentPath="/en/transparency"
+>
+  <PageHeader
+    title="Transparency"
+    subtitle="Disclosure documents and contractual conditions"
+  />
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose max-w-none mb-12">
+          <p class="text-text-light text-lg leading-relaxed">
+            In compliance with sector regulations, Impresa Confidi makes available to the public the documentation relating to the transparency of operations and services offered. Below are the available documents.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          {trasparenzaDocs.map(doc => (
+            <a
+              href={`/docs/trasparenza/${doc.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-lg hover:bg-primary-light/50 transition-colors group border border-transparent hover:border-border-light"
+            >
+              <span class="icon-pdf group-hover:bg-accent group-hover:text-white transition-colors">PDF</span>
+              <span class="text-text group-hover:text-primary transition-colors">{doc.name}</span>
+              <svg class="w-4 h-4 ml-auto text-text-light opacity-0 group-hover:opacity-100 transition-all flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bg-alt">
+    <div class="container-custom max-w-3xl mx-auto">
+      <h2 class="text-primary mb-8">Additional Information</h2>
+
+      <div class="space-y-8">
+        <div class="card">
+          <h3 class="mb-3">Complaints</h3>
+          <p class="text-text-light">
+            For any complaints, you can send a written notice to our certified email <strong>impresaconfidi@pec.it</strong> or by registered mail to our registered office at Via Cappuccini 64, 80059 Torre del Greco (NA), Italy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-3">Pre-contractual Information</h3>
+          <p class="text-text-light">
+            Before signing any guarantee contract, we provide the member with all the pre-contractual documentation required by current regulations, including updated information sheets.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-3">Rates and Conditions</h3>
+          <p class="text-text-light">
+            The applicable economic conditions can be found in the information sheets above. For personalized conditions, we invite members to contact us directly.
+          </p>
+          <div class="mt-4">
+            <a href="/en/contact" class="btn btn-outline text-sm px-4 py-2">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

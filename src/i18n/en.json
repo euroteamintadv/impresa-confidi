@@ -1,0 +1,86 @@
+{
+  "site": {
+    "title": "Impresa Confidi",
+    "subtitle": "Supporting Campania SMEs since 1998",
+    "description": "Impresa Confidi SCpA — Cooperative joint-stock company. Collective guarantees, credit access and financial consultancy for SMEs in Campania, Italy."
+  },
+  "nav": {
+    "home": "Home",
+    "chiSiamo": "About Us",
+    "servizi": "Services",
+    "modulistica": "Documents",
+    "trasparenza": "Transparency",
+    "partner": "Partners",
+    "soci": "Members",
+    "contatti": "Contact",
+    "privacy": "Privacy",
+    "cookie": "Cookie"
+  },
+  "hero": {
+    "title": "Growing together with your business",
+    "subtitle": "Since 1998 we provide guarantees, consultancy and credit access to SMEs in Campania. A non-profit cooperative, standing by entrepreneurs.",
+    "cta1": "Our services",
+    "cta2": "Become a member"
+  },
+  "trust": {
+    "years": "Years of activity",
+    "companies": "Assisted companies",
+    "guarantees": "Guarantees issued",
+    "million": "M €"
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "Services designed to support SME growth",
+    "service1": {
+      "title": "Collective Guarantees",
+      "desc": "We provide collective guarantees to member SMEs to facilitate access to bank credit on favorable terms."
+    },
+    "service2": {
+      "title": "Resto al Sud",
+      "desc": "We are an Invitalia-accredited entity for Resto al Sud applications. We guide you step by step through the application process."
+    },
+    "service3": {
+      "title": "Financial Consultancy",
+      "desc": "We offer consultancy for preliminary investigation, submission and monitoring of financing through banks and the Guarantee Fund."
+    }
+  },
+  "partners": {
+    "title": "Partners & Affiliates",
+    "subtitle": "We work with banks and institutions"
+  },
+  "news": {
+    "title": "Latest news",
+    "subtitle": "Updates and announcements for members"
+  },
+  "cta": {
+    "chiSiamo": "Discover our story",
+    "servizi": "View all services",
+    "modulistica": "Download documents",
+    "contatti": "Contact us"
+  },
+  "footer": {
+    "chiSiamo": "About Us",
+    "desc": "IMPRESA CONFIDI SCpA — Non-profit cooperative joint-stock company. Manager of public guarantee funds for SMEs in Campania.",
+    "contatti": "Contact",
+    "linkUtili": "Useful links",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy",
+    "copyright": "All rights reserved",
+    "piva": "Tax Code – VAT: 03375901216",
+    "pec": "Certified Email: impresaconfidi@pec.it"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "We are here to help",
+    "address": "Via Cappuccini 64, 80059 Torre del Greco (NA), Italy",
+    "phone": "+39 081 358 0367",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send request",
+      "success": "Message sent successfully!",
+      "error": "Sending error. Please try again."
+    }
+  }
+}

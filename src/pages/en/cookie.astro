@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+
+<BaseLayout
+  title="Cookie Policy"
+  description="Cookie Policy of Impresa Confidi SCpA — Information on cookie usage on impresaconfidi.it."
+  lang="en"
+  currentPath="/en/cookie"
+>
+  <PageHeader title="Cookie Policy" subtitle="Information on cookie usage" />
+
+  <section class="section">
+    <div class="container-custom max-w-3xl mx-auto">
+      <div class="prose max-w-none text-text-light space-y-6">
+
+        <p><strong>Last updated: 2026</strong></p>
+
+        <h2 class="text-primary text-2xl mt-10">What are cookies</h2>
+        <p>Cookies are small text files that websites save on the user's device during browsing. They are used to store useful information to improve the browsing experience.</p>
+
+        <h2 class="text-primary text-2xl mt-10">Cookies used</h2>
+        <p>This site uses <strong>only technical cookies</strong>, necessary for the operation of the site itself. Specifically:</p>
+        <ul>
+          <li><strong>Session cookies:</strong> necessary for site navigation and functionality. They are deleted when the browser is closed.</li>
+          <li><strong>Preference cookies:</strong> store the language choice (Italian/English) and cookie consent. Duration: 12 months.</li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">Cookies not used</h2>
+        <p>This site <strong>does not use</strong>:</p>
+        <ul>
+          <li>Profiling cookies</li>
+          <li>Third-party cookies</li>
+          <li>Tracking or analytics tools</li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">How to disable cookies</h2>
+        <p>Most browsers allow you to control cookies through settings. For more information:</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" class="text-primary underline hover:text-primary-dark">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" class="text-primary underline hover:text-primary-dark">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/en-us/guide/safari/sfri11471/mac" class="text-primary underline hover:text-primary-dark">Safari</a></li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">Changes to the Cookie Policy</h2>
+        <p>This notice may be updated. Please check this page periodically.</p>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

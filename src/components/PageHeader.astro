@@ -1,0 +1,19 @@
+---
+// Page header for inner pages (Chi Siamo, Servizi, etc.)
+interface Props {
+  title: string;
+  subtitle?: string;
+  lang?: string;
+}
+
+const { title, subtitle, lang = 'it' } = Astro.props;
+---
+
+<section class="relative bg-bg-alt border-b border-border-light">
+  <div class="container-custom py-16 md:py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-primary mb-4">{title}</h1>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+  </div>
+</section>

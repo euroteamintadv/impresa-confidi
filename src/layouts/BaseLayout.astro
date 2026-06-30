@@ -1,0 +1,75 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import itData from '../i18n/it.json';
+import enData from '../i18n/en.json';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  currentPath: string;
+}
+
+const {
+  title,
+  description,
+  lang = 'it',
+  ogImage,
+  canonicalURL,
+  currentPath,
+} = Astro.props;
+
+const isEn = currentPath.startsWith('/en');
+const t = isEn ? enData : itData;
+
+const navItems = [
+  { label: t.nav.home, href: isEn ? '/en' : '/' },
+  { label: t.nav.chiSiamo, href: isEn ? '/en/about' : '/chi-siamo' },
+  { label: t.nav.servizi, href: isEn ? '/en/services' : '/servizi' },
+  { label: t.nav.modulistica, href: isEn ? '/en/documents' : '/modulistica' },
+  { label: t.nav.trasparenza, href: isEn ? '/en/transparency' : '/trasparenza' },
+  { label: t.nav.partner, href: isEn ? '/en/partners' : '/partner' },
+  { label: t.nav.soci, href: isEn ? '/en/members' : '/soci' },
+  { label: t.nav.contatti, href: isEn ? '/en/contact' : '/contatti' },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      lang={lang}
+      ogImage={ogImage}
+      canonicalURL={canonicalURL}
+    />
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
+  </head>
+  <body>
+    <Header
+      currentPath={currentPath}
+      navItems={navItems}
+      site={t.site}
+      nav={{ privacy: t.nav.privacy, cookie: t.nav.cookie }}
+    />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer
+      currentPath={currentPath}
+      navItems={navItems}
+      footer={t.footer}
+      contact={{ address: t.contact.address, phone: t.contact.phone }}
+      nav={{ privacy: t.nav.privacy, cookie: t.nav.cookie }}
+    />
+    <CookieBanner />
+  </body>
+</html>

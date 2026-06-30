@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#014E9E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#bg)"/>
+  <!-- Shield/guarantee shape -->
+  <path d="M60 20 L90 35 L90 65 C90 85 75 100 60 105 C45 100 30 85 30 65 L30 35 Z" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- IC inside -->
+  <text x="60" y="68" text-anchor="middle" fill="white" font-family="Georgia, serif" font-weight="bold" font-size="28">IC</text>
+  <!-- Checkmark -->
+  <polyline points="42,62 54,75 78,50" fill="none" stroke="#C4A45A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const documents = {
+  istruttoria: {
+    title: "Documenti per l'istruttoria",
+    docs: [
+      { name: "Elenco documenti ditta individuale", file: "elenco_documenti_ditta_individuale.pdf" },
+      { name: "Elenco documenti nuove imprese (Start up)", file: "elenco_documenti_nuove_imprese_(start_up).pdf" },
+      { name: "Elenco documenti società", file: "elenco_documenti_societa.pdf" },
+    ]
+  },
+  accessoCredito: {
+    title: "Moduli per l'accesso al credito",
+    docs: [
+      { name: "Autocertificazione leasing", file: "autocertificazione_leasing.pdf" },
+      { name: "Autocertificazione rapporti bancari a breve", file: "autocertificazione_rapporti_bancari_breve_termine.pdf" },
+      { name: "Autocertificazione rapporti bancari medio/lungo", file: "autocertificazione_rapporti_bancari_medio_lungo_termine.pdf" },
+      { name: "Autocertificazione regolarità tributaria", file: "autocertificazione_regolarita_posizione_tributaria_e_previdenziale.pdf" },
+      { name: "Business Plan", file: "business_plan.pdf" },
+      { name: "Contratto di Garanzia", file: "contratto_di_garanzia.pdf" },
+      { name: "Descrizione beni immobili garante", file: "descrizione_beni_immobili_garante_società.pdf" },
+      { name: "Dichiarazione antiriciclaggio", file: "dichiarazione_antiriciclagio.pdf" },
+      { name: "Dichiarazione de-minimis", file: "dichiarazione_de-minimis.pdf" },
+      { name: "Dichiarazione assenza dipendenti", file: "dichiarazione_sostitutiva_atto_notorio_assenza_dipendenti.pdf" },
+      { name: "Dichiarazione certificazioni anagrafiche", file: "dichiarazione_sostitutiva_di_certificazioni_anagrafiche.pdf" },
+      { name: "MCC Allegato 4 Controgaranzia", file: "MCC_Allegato_4_Controgaranzia-D.O._181211.pdf" },
+      { name: "Modulo codice univoco e PEC", file: "modulo_codice_univoco_e_PEC.pdf" },
+      { name: "Modulo richiesta accesso dati CR", file: "modulo_richiesta_accesso_dati_CR.pdf" },
+      { name: "Privacy GDPR e CRIF", file: "privacy_GDPR_e_CRIF.pdf" },
+    ]
+  },
+};
+
+const sectionKeys = ['istruttoria', 'accessoCredito'] as const;
+
+const it = await import('../i18n/it.json');
+const t = it.default;
+---
+
+<BaseLayout
+  title="Modulistica"
+  description="Scarica i documenti per l'istruttoria e i moduli per l'accesso al credito di Impresa Confidi."
+  lang="it"
+  currentPath="/modulistica"
+>
+  <PageHeader title="Modulistica" subtitle="Documenti e moduli da scaricare" />
+
+  {sectionKeys.map((key) => (
+    <section class="section {key !== sectionKeys[0] ? 'bg-bg-alt' : ''}">
+      <div class="container-custom">
+        <h2 class="section-title mb-8">{documents[key].title}</h2>
+        <div class="max-w-2xl mx-auto space-y-2">
+          {documents[key].docs.map((doc) => (
+            <a
+              href={`/docs/${key === 'istruttoria' ? 'istruttoria' : 'accesso_credito'}/${doc.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-lg hover:bg-primary-light/50 transition-colors group border border-transparent hover:border-border-light"
+            >
+              <span class="icon-pdf group-hover:bg-accent group-hover:text-white transition-colors">PDF</span>
+              <span class="text-text group-hover:text-primary transition-colors">{doc.name}</span>
+              <svg class="w-4 h-4 ml-auto text-text-light opacity-0 group-hover:opacity-100 transition-all flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container-custom text-center">
+      <h2 class="text-primary mb-4">Serve aiuto con la documentazione?</h2>
+      <p class="text-text-light mb-6">Il nostro team è a disposizione per guidarti nella compilazione.</p>
+      <a href="/contatti" class="btn btn-primary">{t.cta.contatti}</a>
+    </div>
+  </section>
+</BaseLayout>

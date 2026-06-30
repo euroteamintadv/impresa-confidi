@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const en = await import('../../i18n/en.json');
+const t = en.default;
+---
+
+<BaseLayout
+  title="Services"
+  description="Collective guarantees, Resto al Sud, financial consultancy. All services offered by Impresa Confidi to SMEs in Campania."
+  lang="en"
+  currentPath="/en/services"
+>
+  <PageHeader title="Services" subtitle="Tailored solutions for your business" />
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard icon="guarantee" title={t.services.service1.title} description={t.services.service1.desc} index={0} />
+        <ServiceCard icon="compass" title={t.services.service2.title} description={t.services.service2.desc} index={1} />
+        <ServiceCard icon="briefcase" title={t.services.service3.title} description={t.services.service3.desc} index={2} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bg-alt">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto space-y-16">
+        <div>
+          <h2 class="text-primary mb-4">Collective Guarantee</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>The collective guarantee is the core service of the Confidi. Member businesses can access bank financing on better terms thanks to the guarantee provided by the Confidi.</p>
+            <ul>
+              <li>Reduced interest rates</li>
+              <li>Lower personal guarantees required</li>
+              <li>Easier credit access</li>
+              <li>Assistance with the application process</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-primary mb-4">Resto al Sud</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>Impresa Confidi is an <strong>Invitalia-accredited entity</strong> for Resto al Sud, the incentive supporting the creation and development of new businesses in Southern Italy.</p>
+            <p>Our team assists you at every stage:</p>
+            <ul>
+              <li>Preliminary project assessment</li>
+              <li>Business plan preparation</li>
+              <li>Application submission on the Invitalia platform</li>
+              <li>Monitoring and reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-primary mb-4">Financial Consultancy</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>We offer complete consultancy for access to:</p>
+            <ul>
+              <li><strong>SME Guarantee Fund</strong> — Public guarantees on bank loans</li>
+              <li><strong>Liquidity Decree</strong> — Business support for credit access</li>
+              <li><strong>Subsidized financing</strong> — Regional, national and European calls</li>
+            </ul>
+            <p>We manage the entire process: preliminary investigation, submission and monitoring.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="/en/contact" class="btn btn-primary">Request a consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

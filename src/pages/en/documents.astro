@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const documents = {
+  istruttoria: {
+    title: "Application Documents",
+    docs: [
+      { name: "Document list — Sole proprietorship", file: "elenco_documenti_ditta_individuale.pdf" },
+      { name: "Document list — Startups", file: "elenco_documenti_nuove_imprese_(start_up).pdf" },
+      { name: "Document list — Companies", file: "elenco_documenti_societa.pdf" },
+    ]
+  },
+  accessoCredito: {
+    title: "Credit Access Forms",
+    docs: [
+      { name: "Leasing self-certification", file: "autocertificazione_leasing.pdf" },
+      { name: "Short-term bank relationships", file: "autocertificazione_rapporti_bancari_breve_termine.pdf" },
+      { name: "Mid/long-term bank relationships", file: "autocertificazione_rapporti_bancari_medio_lungo_termine.pdf" },
+      { name: "Tax and social security compliance", file: "autocertificazione_regolarita_posizione_tributaria_e_previdenziale.pdf" },
+      { name: "Business Plan", file: "business_plan.pdf" },
+      { name: "Guarantee Agreement", file: "contratto_di_garanzia.pdf" },
+      { name: "Guarantor real estate description", file: "descrizione_beni_immobili_garante_società.pdf" },
+      { name: "Anti-money laundering declaration", file: "dichiarazione_antiriciclagio.pdf" },
+      { name: "De-minimis declaration", file: "dichiarazione_de-minimis.pdf" },
+      { name: "Declaration of no employees", file: "dichiarazione_sostitutiva_atto_notorio_assenza_dipendenti.pdf" },
+      { name: "Personal data certification", file: "dichiarazione_sostitutiva_di_certificazioni_anagrafiche.pdf" },
+      { name: "MCC Attachment 4 Counter-guarantee", file: "MCC_Allegato_4_Controgaranzia-D.O._181211.pdf" },
+      { name: "Unique code and PEC form", file: "modulo_codice_univoco_e_PEC.pdf" },
+      { name: "Credit report access request", file: "modulo_richiesta_accesso_dati_CR.pdf" },
+      { name: "GDPR Privacy and CRIF", file: "privacy_GDPR_e_CRIF.pdf" },
+    ]
+  },
+};
+
+const sectionKeys = ['istruttoria', 'accessoCredito'] as const;
+
+const en = await import('../../i18n/en.json');
+const t = en.default;
+---
+
+<BaseLayout
+  title="Documents"
+  description="Download application documents and credit access forms from Impresa Confidi."
+  lang="en"
+  currentPath="/en/documents"
+>
+  <PageHeader title="Documents" subtitle="Download forms and documents" />
+
+  {sectionKeys.map((key) => (
+    <section class={`section ${key !== sectionKeys[0] ? 'bg-bg-alt' : ''}`}>
+      <div class="container-custom">
+        <h2 class="section-title mb-8">{documents[key].title}</h2>
+        <div class="max-w-2xl mx-auto space-y-2">
+          {documents[key].docs.map((doc) => (
+            <a
+              href={`/docs/${key === 'istruttoria' ? 'istruttoria' : 'accesso_credito'}/${doc.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-lg hover:bg-primary-light/50 transition-colors group border border-transparent hover:border-border-light"
+            >
+              <span class="icon-pdf group-hover:bg-accent group-hover:text-white transition-colors">PDF</span>
+              <span class="text-text group-hover:text-primary transition-colors">{doc.name}</span>
+              <svg class="w-4 h-4 ml-auto text-text-light opacity-0 group-hover:opacity-100 transition-all flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="container-custom text-center">
+      <h2 class="text-primary mb-4">Need help with the paperwork?</h2>
+      <p class="text-text-light mb-6">Our team is available to guide you through the forms.</p>
+      <a href="/en/contact" class="btn btn-primary">{t.cta.contatti}</a>
+    </div>
+  </section>
+</BaseLayout>

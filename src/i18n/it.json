@@ -1,0 +1,86 @@
+{
+  "site": {
+    "title": "Impresa Confidi",
+    "subtitle": "Dal 1998 al fianco delle PMI campane",
+    "description": "Impresa Confidi SCpA — Società cooperativa per azioni. Garanzie collettive, accesso al credito e consulenza finanziaria per le PMI della Campania."
+  },
+  "nav": {
+    "home": "Home",
+    "chiSiamo": "Chi Siamo",
+    "servizi": "Servizi",
+    "modulistica": "Modulistica",
+    "trasparenza": "Trasparenza",
+    "partner": "Partner",
+    "soci": "Area Soci",
+    "contatti": "Contatti",
+    "privacy": "Privacy",
+    "cookie": "Cookie"
+  },
+  "hero": {
+    "title": "Cresciamo insieme alla tua impresa",
+    "subtitle": "Dal 1998 offriamo garanzie, consulenza e accesso al credito alle PMI campane. Una cooperativa senza fini di lucro, al fianco di chi fa impresa.",
+    "cta1": "I nostri servizi",
+    "cta2": "Diventa socio"
+  },
+  "trust": {
+    "years": "Anni di attività",
+    "companies": "Imprese assistite",
+    "guarantees": "Garanzie erogate",
+    "million": "mln €"
+  },
+  "services": {
+    "title": "Cosa facciamo",
+    "subtitle": "Servizi pensati per sostenere la crescita delle PMI",
+    "service1": {
+      "title": "Garanzia Collettiva",
+      "desc": "Prestiamo garanzie collettive a favore delle PMI socie per agevolare l'accesso al credito bancario a condizioni vantaggiose."
+    },
+    "service2": {
+      "title": "Resto al Sud",
+      "desc": "Siamo ente accreditato Invitalia per le pratiche Resto al Sud. Ti guidiamo passo dopo passo nella presentazione della domanda."
+    },
+    "service3": {
+      "title": "Consulenza Finanziaria",
+      "desc": "Offriamo consulenza per istruttoria, presentazione e monitoraggio per finanziamenti presso banche e Fondo di Garanzia."
+    }
+  },
+  "partners": {
+    "title": "Partner & Convenzionati",
+    "subtitle": "Collaboriamo con istituti di credito e istituzioni"
+  },
+  "news": {
+    "title": "Ultime notizie",
+    "subtitle": "Comunicazioni e aggiornamenti per i soci"
+  },
+  "cta": {
+    "chiSiamo": "Scopri la nostra storia",
+    "servizi": "Vedi tutti i servizi",
+    "modulistica": "Scarica documenti",
+    "contatti": "Contattaci"
+  },
+  "footer": {
+    "chiSiamo": "Chi siamo",
+    "desc": "IMPRESA CONFIDI SCpA — Società cooperativa per azioni senza fini di lucro. Gestore di fondi pubblici di garanzia per PMI della Campania.",
+    "contatti": "Contatti",
+    "linkUtili": "Link utili",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy",
+    "copyright": "Tutti i diritti riservati",
+    "piva": "C.F. – P.IVA: 03375901216",
+    "pec": "PEC: impresaconfidi@pec.it"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Siamo a tua disposizione",
+    "address": "Via Cappuccini 64, 80059 Torre del Greco (NA)",
+    "phone": "081 358 0367",
+    "form": {
+      "name": "Nome e Cognome",
+      "email": "Email",
+      "message": "Messaggio",
+      "send": "Invia richiesta",
+      "success": "Messaggio inviato con successo!",
+      "error": "Errore nell'invio. Riprova."
+    }
+  }
+}

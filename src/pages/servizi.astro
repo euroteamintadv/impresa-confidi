@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const it = await import('../i18n/it.json');
+const t = it.default;
+---
+
+<BaseLayout
+  title="Servizi"
+  description="Garanzia collettiva, Resto al Sud, consulenza finanziaria. Tutti i servizi che Impresa Confidi offre alle PMI della Campania."
+  lang="it"
+  currentPath="/servizi"
+>
+  <PageHeader title="Servizi" subtitle="Soluzioni su misura per la tua impresa" />
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard icon="guarantee" title={t.services.service1.title} description={t.services.service1.desc} index={0} />
+        <ServiceCard icon="compass" title={t.services.service2.title} description={t.services.service2.desc} index={1} />
+        <ServiceCard icon="briefcase" title={t.services.service3.title} description={t.services.service3.desc} index={2} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Dettaglio servizi -->
+  <section class="section bg-bg-alt">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto space-y-16">
+        <div>
+          <h2 class="text-primary mb-4">Garanzia Collettiva dei Fidi</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>La garanzia collettiva è il servizio principale del Confidi. Le imprese socie possono ottenere finanziamenti bancari a condizioni più favorevoli grazie alla garanzia prestata dal Confidi.</p>
+            <ul>
+              <li>Abbattimento dei tassi di interesse</li>
+              <li>Riduzione delle garanzie personali richieste</li>
+              <li>Accesso facilitato al credito</li>
+              <li>Assistenza nell'istruttoria della pratica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-primary mb-4">Resto al Sud</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>Impresa Confidi è <strong>ente accreditato Invitalia</strong> per le pratiche Resto al Sud, l'incentivo che sostiene la nascita e lo sviluppo di nuove attività imprenditoriali nelle regioni del Mezzogiorno.</p>
+            <p>Il nostro team ti assiste in ogni fase:</p>
+            <ul>
+              <li>Valutazione preliminare del progetto</li>
+              <li>Predisposizione del business plan</li>
+              <li>Presentazione della domanda su piattaforma Invitalia</li>
+              <li>Monitoraggio e rendicontazione</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-primary mb-4">Consulenza Finanziaria</h2>
+          <div class="prose max-w-none text-text-light">
+            <p>Offriamo consulenza completa per l'accesso a:</p>
+            <ul>
+              <li><strong>Fondo di Garanzia per le PMI</strong> — Garanzia pubblica sui finanziamenti bancari</li>
+              <li><strong>Decreto Liquidità</strong> — Aiuti alle imprese in materia di accesso al credito</li>
+              <li><strong>Finanziamenti agevolati</strong> — Bandi regionali, nazionali ed europei</li>
+            </ul>
+            <p>Ci occupiamo dell'intero iter: istruttoria, presentazione e monitoraggio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="/contatti" class="btn btn-primary">Richiedi una consulenza</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

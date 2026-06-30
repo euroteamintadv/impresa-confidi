@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const it = await import('../i18n/it.json');
+const t = it.default;
+---
+
+<BaseLayout
+  title="Chi Siamo"
+  description="Impresa Confidi SCpA è una società cooperativa per azioni senza fini di lucro, presente sul territorio dal 1998. Gestore di fondi pubblici di garanzia per le PMI della Campania."
+  lang="it"
+  currentPath="/chi-siamo"
+>
+  <PageHeader title="Chi Siamo" subtitle="Una storia di fiducia e territorio" />
+
+  <!-- Mission -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose-lg">
+          <p class="lead text-xl text-text-light leading-relaxed">
+            Impresa Confidi è una <strong class="text-text">società cooperativa per azioni, senza fini di lucro</strong>, presente sul territorio dal 1998. È gestore di fondi pubblici di garanzia dedicati alle Piccole e Medie Imprese operanti nella regione Campania.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section bg-bg-alt">
+    <div class="container-custom">
+      <h2 class="section-title mb-12">La nostra storia</h2>
+      <div class="max-w-2xl mx-auto space-y-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">98</div>
+          <div>
+            <h3 class="text-xl">Fondazione</h3>
+            <p class="text-text-light">Impresa Confidi nasce come cooperativa di garanzia per supportare le imprese campane nell'accesso al credito.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">05</div>
+          <div>
+            <h3 class="text-xl">Crescita</h3>
+            <p class="text-text-light">Ampliamento della base sociale e del volume di garanzie erogate. Nuove convenzioni con istituti bancari.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">15</div>
+          <div>
+            <h3 class="text-xl">Consolidamento</h3>
+            <p class="text-text-light">Rafforzamento della presenza sul territorio campano. Gestione di fondi pubblici e nuove partnership.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">21</div>
+          <div>
+            <h3 class="text-xl">Accreditamento Invitalia</h3>
+            <p class="text-text-light">Ottenuto l'accreditamento come ente per le pratiche Resto al Sud, ampliando i servizi per le imprese del Mezzogiorno.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-lg">25</div>
+          <div>
+            <h3 class="text-xl">Oggi</h3>
+            <p class="text-text-light">Oltre 800 imprese assistite, volumi di garanzia in costante crescita. Sguardo rivolto al futuro con nuovi servizi digitali.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finalità -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-primary mb-6">La nostra finalità</h2>
+        <p class="text-text-light text-lg leading-relaxed">
+          Ha quale finalità principale le <strong class="text-text">prestazioni di garanzia collettiva</strong> a favore delle PMI associate, al fine di agevolarne l'accesso al credito bancario a condizioni vantaggiose. Operiamo senza fini di lucro, reinvestendo ogni risorsa per il beneficio dei soci e del territorio.
+        </p>
+        <div class="mt-10 text-center">
+          <a href="/contatti" class="btn btn-primary">{t.cta.contatti}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

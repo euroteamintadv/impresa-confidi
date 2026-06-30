@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout
+  title="Cookie Policy"
+  description="Cookie Policy di Impresa Confidi SCpA — Informativa sull'uso dei cookie sul sito impresaconfidi.it."
+  lang="it"
+  currentPath="/cookie"
+>
+  <PageHeader title="Cookie Policy" subtitle="Informativa sull'uso dei cookie" />
+
+  <section class="section">
+    <div class="container-custom max-w-3xl mx-auto">
+      <div class="prose max-w-none text-text-light space-y-6">
+
+        <p><strong>Ultimo aggiornamento: 2026</strong></p>
+
+        <h2 class="text-primary text-2xl mt-10">Cosa sono i cookie</h2>
+        <p>I cookie sono piccoli file di testo che i siti web salvano sul dispositivo dell'utente durante la navigazione. Servono a memorizzare informazioni utili per migliorare l'esperienza di navigazione.</p>
+
+        <h2 class="text-primary text-2xl mt-10">Cookie utilizzati</h2>
+        <p>Questo sito utilizza <strong>esclusivamente cookie tecnici</strong>, necessari al funzionamento del sito stesso. In particolare:</p>
+        <ul>
+          <li><strong>Cookie di sessione:</strong> necessari per la navigazione e il funzionamento del sito. Vengono eliminati alla chiusura del browser.</li>
+          <li><strong>Cookie di preferenza:</strong> memorizzano la scelta relativa alla lingua (italiano/inglese) e il consenso ai cookie. Durata: 12 mesi.</li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">Cookie non utilizzati</h2>
+        <p>Questo sito <strong>non utilizza</strong>:</p>
+        <ul>
+          <li>Cookie di profilazione</li>
+          <li>Cookie di terze parti</li>
+          <li>Strumenti di tracciamento o analytics</li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">Come disabilitare i cookie</h2>
+        <p>La maggior parte dei browser consente di controllare i cookie tramite le impostazioni. Per maggiori informazioni:</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" class="text-primary underline hover:text-primary-dark">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie" class="text-primary underline hover:text-primary-dark">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" class="text-primary underline hover:text-primary-dark">Safari</a></li>
+        </ul>
+
+        <h2 class="text-primary text-2xl mt-10">Modifiche alla Cookie Policy</h2>
+        <p>Questa informativa può essere aggiornata. Si consiglia di consultare periodicamente questa pagina.</p>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

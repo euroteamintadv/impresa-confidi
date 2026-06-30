@@ -1,0 +1,64 @@
+---
+interface TrustItem {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  items: TrustItem[];
+  lang: string;
+}
+
+const { items, lang } = Astro.props;
+---
+
+<section class="section bg-bg-alt">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+      {items.map((item, i) => (
+        <div class="text-center">
+          <div class="trust-number" data-target={item.value.replace(/[^0-9]/g, '')}>
+            0
+          </div>
+          <p class="text-text-light mt-2 font-medium">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple counter animation
+  function animateCounters() {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const target = parseInt(el.getAttribute('data-target') || '0');
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+
+      const update = () => {
+        current += step;
+        if (current < target) {
+          el.textContent = Math.floor(current);
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target;
+        }
+      };
+      update();
+    });
+  }
+
+  // Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const section = document.querySelector('.trust-number')?.closest('section');
+  if (section) observer.observe(section);
+</script>
