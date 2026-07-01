@@ -28,14 +28,14 @@ const isEn = currentPath.startsWith('/en');
 const t = isEn ? enData : itData;
 
 const navItems = [
-  { label: t.nav.home, href: isEn ? '/en' : '/' },
-  { label: t.nav.chiSiamo, href: isEn ? '/en/about' : '/chi-siamo' },
-  { label: t.nav.servizi, href: isEn ? '/en/services' : '/servizi' },
-  { label: t.nav.modulistica, href: isEn ? '/en/documents' : '/modulistica' },
-  { label: t.nav.trasparenza, href: isEn ? '/en/transparency' : '/trasparenza' },
-  { label: t.nav.partner, href: isEn ? '/en/partners' : '/partner' },
-  { label: t.nav.soci, href: isEn ? '/en/members' : '/soci' },
-  { label: t.nav.contatti, href: isEn ? '/en/contact' : '/contatti' },
+  { label: t.nav.home, href: isEn ? 'en/' : '' },
+  { label: t.nav.chiSiamo, href: isEn ? 'en/about/' : 'chi-siamo/' },
+  { label: t.nav.servizi, href: isEn ? 'en/services/' : 'servizi/' },
+  { label: t.nav.modulistica, href: isEn ? 'en/documents/' : 'modulistica/' },
+  { label: t.nav.trasparenza, href: isEn ? 'en/transparency/' : 'trasparenza/' },
+  { label: t.nav.partner, href: isEn ? 'en/partners/' : 'partner/' },
+  { label: t.nav.soci, href: isEn ? 'en/members/' : 'soci/' },
+  { label: t.nav.contatti, href: isEn ? 'en/contact/' : 'contatti/' },
 ];
 ---
 

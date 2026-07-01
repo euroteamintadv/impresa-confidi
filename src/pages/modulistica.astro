@@ -74,7 +74,7 @@ const t = it.default;
     <div class="container-custom text-center">
       <h2 class="text-primary mb-4">Serve aiuto con la documentazione?</h2>
       <p class="text-text-light mb-6">Il nostro team è a disposizione per guidarti nella compilazione.</p>
-      <a href="/contatti" class="btn btn-primary">{t.cta.contatti}</a>
+      <a href={import.meta.env.BASE_URL + 'contatti/'} class="btn btn-primary">{t.cta.contatti}</a>
     </div>
   </section>
 </BaseLayout>

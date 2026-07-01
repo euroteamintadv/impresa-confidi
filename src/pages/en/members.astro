@@ -20,7 +20,7 @@ import PageHeader from '../../components/PageHeader.astro';
         </div>
         <p class="text-text-light mb-2">Members are invited to the Ordinary Meeting at the registered office in Via Cappuccini 64, Torre del Greco (NA), Italy.</p>
         <p class="text-text-light mb-4">For information on dates and participation methods, please contact the secretariat or check email communications.</p>
-        <a href="/docs/soci/assemblea-soci-9-ott-2023.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline text-sm px-4 py-2 inline-flex items-center gap-2">
+        <a href={import.meta.env.BASE_URL + 'docs/soci/assemblea-soci-9-ott-2023.pdf'} target="_blank" rel="noopener noreferrer" class="btn btn-outline text-sm px-4 py-2 inline-flex items-center gap-2">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Meeting document
         </a>
@@ -41,7 +41,7 @@ import PageHeader from '../../components/PageHeader.astro';
           <span class="text-xs text-text-light bg-bg-alt px-3 py-1 rounded-full">27/05/2022</span>
           <h3 class="mt-3 mb-2">Meeting — Second call</h3>
           <p class="text-text-light text-sm">Participation via remote connection upon reservation by email by 12:00 on the second day before the first call.</p>
-          <a href="/docs/soci/assemblea_soci_2022.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-accent hover:text-accent-dark text-sm mt-2">
+          <a href={import.meta.env.BASE_URL + 'docs/soci/assemblea_soci_2022.pdf'} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-accent hover:text-accent-dark text-sm mt-2">
             Download attachment
             <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

@@ -73,7 +73,7 @@ const t = en.default;
     <div class="container-custom text-center">
       <h2 class="text-primary mb-4">Need help with the paperwork?</h2>
       <p class="text-text-light mb-6">Our team is available to guide you through the forms.</p>
-      <a href="/en/contact" class="btn btn-primary">{t.cta.contatti}</a>
+      <a href={import.meta.env.BASE_URL + 'en/contact/'} class="btn btn-primary">{t.cta.contatti}</a>
     </div>
   </section>
 </BaseLayout>

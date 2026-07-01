@@ -23,7 +23,7 @@ const { title, subtitle, cta1, cta1Href, cta2, cta2Href } = Astro.props;
     <div class="max-w-3xl mx-auto text-center">
       <!-- Logo mark above title -->
       <div class="mb-8 animate-fade-in-up">
-        <img src="/images/logo.svg" alt="" class="h-16 md:h-20 mx-auto" width="80" height="80" aria-hidden="true" />
+        <img src={import.meta.env.BASE_URL + 'images/logo.svg'} alt="" class="h-16 md:h-20 mx-auto" width="80" height="80" aria-hidden="true" />
       </div>
 
       <h1 class="mb-6 animate-fade-in-up" style="animation-delay: 0.1s">
@@ -35,8 +35,8 @@ const { title, subtitle, cta1, cta1Href, cta2, cta2Href } = Astro.props;
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
-        <a href={cta1Href} class="btn btn-primary">{cta1}</a>
-        <a href={cta2Href} class="btn btn-outline">{cta2}</a>
+        <a href={import.meta.env.BASE_URL + cta1Href.slice(1)} class="btn btn-primary">{cta1}</a>
+        <a href={import.meta.env.BASE_URL + cta2Href.slice(1)} class="btn btn-outline">{cta2}</a>
       </div>
     </div>
   </div>

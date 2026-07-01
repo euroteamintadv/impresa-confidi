@@ -21,12 +21,12 @@ const services = [
 ];
 
 const partners = [
-  { name: 'Finpromoter', logo: '/images/partners/finpromoter.png', href: 'https://www.finpromoter.it/' },
-  { name: 'Fondo di Garanzia', logo: '/images/partners/fondo-garanzia.png', href: 'https://www.fondidigaranzia.it/' },
-  { name: 'Ascom', logo: '/images/partners/ascom.png', href: 'https://www.ascom-tdg.it/' },
-  { name: 'BCP', logo: '/images/partners/bcp.jpg', href: 'https://www.bcp.it/' },
-  { name: 'BPER', logo: '/images/partners/bper.png', href: 'https://www.bper.it/' },
-  { name: 'MCC', logo: '/images/partners/mcc.jpg', href: 'https://www.fdg.mcc.it/' },
+  { name: 'Finpromoter', logo: 'images/partners/finpromoter.png', href: 'https://www.finpromoter.it/' },
+  { name: 'Fondo di Garanzia', logo: 'images/partners/fondo-garanzia.png', href: 'https://www.fondidigaranzia.it/' },
+  { name: 'Ascom', logo: 'images/partners/ascom.png', href: 'https://www.ascom-tdg.it/' },
+  { name: 'BCP', logo: 'images/partners/bcp.jpg', href: 'https://www.bcp.it/' },
+  { name: 'BPER', logo: 'images/partners/bper.png', href: 'https://www.bper.it/' },
+  { name: 'MCC', logo: 'images/partners/mcc.jpg', href: 'https://www.fdg.mcc.it/' },
 ];
 ---
 
@@ -63,7 +63,7 @@ const partners = [
         ))}
       </div>
       <div class="text-center mt-10">
-        <a href="/en/services" class="btn btn-outline">{t.cta.servizi}</a>
+        <a href={import.meta.env.BASE_URL + 'en/services/'} class="btn btn-outline">{t.cta.servizi}</a>
       </div>
     </div>
   </section>
@@ -83,7 +83,7 @@ const partners = [
             aria-label={partner.name}
           >
             <img
-              src={partner.logo}
+              src={import.meta.env.BASE_URL + partner.logo}
               alt={partner.name}
               class="max-h-12 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
               width="120"
@@ -104,7 +104,7 @@ const partners = [
         <p class="text-white/80 max-w-xl mx-auto mb-8 text-lg">
           Join the hundreds of businesses that have chosen to grow with us. Discover the benefits of membership.
         </p>
-        <a href="/en/contact" class="btn bg-white text-primary hover:bg-gray-100 inline-flex">Contact us now</a>
+        <a href={import.meta.env.BASE_URL + 'en/contact/'} class="btn bg-white text-primary hover:bg-gray-100 inline-flex">Contact us now</a>
       </div>
     </div>
   </section>
