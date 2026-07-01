@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#014E9E;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="120" height="120" rx="28" fill="url(#bg)"/>
-  <!-- Shield/guarantee shape -->
-  <path d="M60 20 L90 35 L90 65 C90 85 75 100 60 105 C45 100 30 85 30 65 L30 35 Z" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- IC inside -->
-  <text x="60" y="68" text-anchor="middle" fill="white" font-family="Georgia, serif" font-weight="bold" font-size="28">IC</text>
-  <!-- Checkmark -->
-  <polyline points="42,62 54,75 78,50" fill="none" stroke="#C4A45A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 274.2 291" style="enable-background:new 0 0 274.2 291;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#014E9E;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g>
+	<circle class="st0" cx="51.6" cy="55.9" r="18.7"/>
+	<polygon class="st0" points="21.9,84.4 60.1,103.4 60.1,272.2 21.9,253.5 	"/>
+	<ellipse class="st0" cx="166" cy="131.7" rx="105.9" ry="103.4"/>
+	<ellipse class="st1" cx="166.1" cy="131.8" rx="81.2" ry="78"/>
+	<path class="st1" d="M258,80.6l-14.1,28.9c0,0,8.5,26.4-4.5,55.8l18.5,17.6C258,182.9,294.4,128.8,258,80.6z"/>
+	<path class="st1" d="M330.2,136.2"/>
+</g>
 </svg>
